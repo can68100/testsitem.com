@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineLocal - Fragman İzleme Destekli Arşiv</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- İkonlar İçin FontAwesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Navigasyon Menüsü -->
+    <header>
+        <div class="navbar container">
+            <a href="#" class="logo"><i class="fa-solid fa-compact-disc"></i> Cine<span>Local</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active" onclick="filterGenre('Tümü')">Ana Sayfa</a></li>
+                    <li><a href="#" onclick="filterGenre('Aksiyon')">Aksiyon</a></li>
+                    <li><a href="#" onclick="filterGenre('Bilim Kurgu')">Bilim Kurgu</a></li>
+                    <li><a href="#" onclick="filterGenre('Dram')">Dram</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Arşivde film ara...">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Öne Çıkan Film Duvarı (Hero) -->
+    <section class="hero" id="hero-section">
+        <div class="hero-content container">
+            <span class="badge">Haftanın Seçimi</span>
+            <h1 id="hero-title">Interstellar</h1>
+            <p id="hero-desc">Bir grup kaşif, insanlığın hayatta kalmasını sağlamak için bir solucan deliğinden geçerek uzayın derinliklerine yolculuk ediyor.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openHeroTrailer()"><i class="fa-solid fa-play"></i> Fragmanı İzle</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Film Listeleme Alanı -->
+    <main class="container">
+        <div class="main-header">
+            <h2 class="section-title" id="list-title">Tüm Filmler</h2>
+        </div>
+        
+        <div class="movie-grid" id="movie-grid">
+            <!-- JavaScript burayı dolduracak -->
+        </div>
+    </main>
+
+    <!-- Gelişmiş Video Pop-Up/Modal Alanı -->
+    <div class="modal" id="movie-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- JavaScript dinamik video ve detayları buraya basacak -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 CineLocal Arşivi. Tüm Hakları Saklıdır.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands rel="nofollow" href="https://github.com">github</i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
