@@ -34,6 +34,17 @@ const MOVIES_DATA = [
         desc: "Çok yetenekli bir hırsız olan Dom Cobb, insanların rüya gördüğü sırada bilinçaltının derinliklerindeki sırları çalmakta uzmandır."
     }
 ];
+    {
+        id: 4,
+        title: "zübük ",
+        genre: "komedi",
+        year: "2019",
+        rating: "8.0",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToosLXR0KYVkK75yIlaupS1TzggERDa51ZBNBNhI6b_Q&s=10",
+        trailer: <iframe width="560" height="315" src="https://www.youtube.com/embed/__gOZ6gJT8c?si=fUkerjTRJH_vbVaR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        watch_url: "https://dn790001.ca.archive.org/0/items/zubuk_1980/Z%C3%BCb%C3%BCk.mp4",
+        desc: "  Aziz Nesin’in aynı adlı eserinden uyarlanan Zübük, çıkarcı, ikiyüzlü ve halkı kandırarak yükselen bir siyasetçi olan İbrahim Zübükzade'nin rüşvet, yalan ve düzenbazlıkla nasıl merdivenleri tırmandığını anlatan bir siyasi mizah hikayesidir."
+    },
 
 const movieGrid = document.getElementById('movie-grid');
 const searchInput = document.getElementById('search-input');
