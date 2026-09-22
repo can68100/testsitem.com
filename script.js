@@ -1,4 +1,4 @@
-// Film Verileri ve YouTube Fragman Linkleri (Embed Formatında)
+// Film Verileri, Fragmanlar ve Gerçek İzleme Linkleri
 const MOVIES_DATA = [
     {
         id: 1,
@@ -8,6 +8,7 @@ const MOVIES_DATA = [
         rating: "8.7",
         image: "https://unsplash.com",
         trailer: "https://youtube.com",
+        watch_url: "https://ornekizleme-sitesi.com", // BURAYA GERÇEK FİLM LİNKİNİ YAZACAKSIN
         desc: "İnsanlığın geleceği tehlikeye girdiğinde, bir grup astronot yaşanabilir yeni bir gezegen bulmak için solucan deliğinden geçerek uzayda sınırları zorlar."
     },
     {
@@ -18,6 +19,7 @@ const MOVIES_DATA = [
         rating: "9.0",
         image: "https://unsplash.com",
         trailer: "https://youtube.com",
+        watch_url: "https://ornekizleme-sitesi.com", // BURAYA GERÇEK FİLM LİNKİNİ YAZACAKSIN
         desc: "Batman, Gotham şehrini kaosa sürüklemeye çalışan gizemli ve acımasız suçlu Joker ile karşı karşıya geldiğinde en büyük adalet sınavını verir."
     },
     {
@@ -28,57 +30,8 @@ const MOVIES_DATA = [
         rating: "8.8",
         image: "https://unsplash.com",
         trailer: "https://youtube.com",
+        watch_url: "https://ornekizleme-sitesi.com",
         desc: "Çok yetenekli bir hırsız olan Dom Cobb, insanların rüya gördüğü sırada bilinçaltının derinliklerindeki sırları çalmakta uzmandır."
-    },
-    {
-        id: 4,
-        title: "The Shawshank Redemption",
-        genre: "Dram",
-        year: "1994",
-        rating: "9.3",
-        image: "https://unsplash.com",
-        trailer: "https://youtube.com",
-        desc: "Suçsuzluğunu iddia etmesine rağmen müebbet hapse çarptırılan bankacı Andy Dufresne'in Shawshank hapishanesinde kurduğu dostlukları anlatır."
-    },
-    {
-        id: 5,
-        title: "Mad Max: Fury Road",
-        genre: "Aksiyon",
-        year: "2015",
-        rating: "8.1",
-        image: "https://unsplash.com",
-        trailer: "https://youtube.com",
-        desc: "Gelecekte, çölleşmiş dünyada hayatta kalmaya çalışan Max, zalim bir liderden kaçan İmparatoriçe Furiosa ve ekibine katılmak zorunda kalır."
-    },
-    {
-        id: 6,
-        title: "The Godfather",
-        genre: "Dram",
-        year: "1972",
-        rating: "9.2",
-        image: "https://unsplash.com",
-        trailer: "https://youtube.com",
-        desc: "New York'taki güçlü bir İtalyan-Amerikan mafya ailesinin reisi olan Don Vito Corleone'nin imparatorluğunu ve yönetimi devrettiği oğlu Michael'ı konu alır."
-    },
-    {
-        id: 7,
-        title: "Avatar: Water",
-        genre: "Bilim Kurgu",
-        year: "2022",
-        rating: "7.6",
-        image: "https://unsplash.com",
-        trailer: "https://youtube.com",
-        desc: "İlk filmdeki olayların üzerinden on yıldan fazla bir süre geçtikten sonra, Sully ailesinin hikayesini ve hayatta kalma mücadelelerini anlatıyor."
-    },
-    {
-        id: 8,
-        title: "John Wick",
-        genre: "Aksiyon",
-        year: "2014",
-        rating: "7.4",
-        image: "https://unsplash.com",
-        trailer: "https://youtube.com",
-        desc: "Emekli bir tetikçi olan John Wick, evine giren gangsterlerin her şeyini elinden alması üzerine intikam yemini ederek yeraltı dünyasına geri döner."
     }
 ];
 
@@ -118,6 +71,7 @@ function displayMovies(movies) {
     });
 }
 
+// Detay Penceresi ve "Filmi İzle" Butonu Entegrasyonu
 function openMovieDetail(movie) {
     modalBody.innerHTML = `
         <div class="video-container">
@@ -125,12 +79,17 @@ function openMovieDetail(movie) {
         </div>
         <div class="modal-desc">
             <h2>${movie.title}</h2>
-            <div>
+            <div style="margin-bottom: 15px;">
                 <span class="badge">${movie.genre}</span>
                 <span style="margin-left:15px; color:#ffb400; font-weight:bold;"><i class="fa-solid fa-star"></i> ${movie.rating}</span>
                 <span style="margin-left:15px; color:var(--text-muted);">${movie.year}</span>
             </div>
             <p>${movie.desc}</p>
+            
+            <!-- YENİ EKLENEN FİLMİ İZLE BUTONU -->
+            <a href="${movie.watch_url}" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                <i class="fa-solid fa-circle-play"></i> Filmi Full İzle
+            </a>
         </div>
     `;
     modal.style.display = "flex";
